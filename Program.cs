@@ -1,4 +1,4 @@
-﻿decimal valorSaque, valorRestante;
+﻿decimal vlSaque, vlRestante;
 int n200, n100, n50, n20, n10, n5, n2, n1;
 
 Console.Clear();
@@ -8,14 +8,14 @@ Console.WriteLine(@" *------- Caixa Eletrônico -------*");
 Console.ResetColor();
 
 Console.Write("\nDigite o valor que será sacado (R$): ");
-valorSaque = Convert.ToDecimal(Console.ReadLine());
+vlSaque = Convert.ToDecimal(Console.ReadLine());
 
-if (valorSaque <= 0)
+if (vlSaque <= 0)
     {
 
         Console.Write("\nO valor ");
         Console.ForegroundColor = ConsoleColor.DarkRed;
-        Console.Write($"{valorSaque}");
+        Console.Write($"{vlSaque}");
         Console.ResetColor();
         Console.Write(" não pode ser sacado  ");
         Console.ForegroundColor = ConsoleColor.DarkRed;
@@ -26,7 +26,7 @@ if (valorSaque <= 0)
      
     }
 
-if (valorSaque % 1 > 0)
+if (vlSaque % 1 > 0)
     {
 
         Console.Write("\nEste caixa não trabalha com moedas ");
@@ -36,37 +36,37 @@ if (valorSaque % 1 > 0)
         return;
     }
 
-valorRestante = valorSaque;
+vlRestante = vlSaque;
 
-n200 = (int)(valorRestante / 200);
-valorRestante = valorRestante % 200;
+n200 = (int)(vlRestante / 200);
+vlRestante = vlRestante % 200;
 
-n100 = (int)(valorRestante / 100);
-valorRestante = valorRestante % 100;
+n100 = (int)(vlRestante / 100);
+vlRestante = vlRestante % 100;
 
-n50 = (int)(valorRestante / 50);
-valorRestante = valorRestante % 50;
+n50 = (int)(vlRestante / 50);
+vlRestante = vlRestante % 50;
 
-n20 = (int)(valorRestante / 20);
-valorRestante = valorRestante % 20;
+n20 = (int)(vlRestante / 20);
+vlRestante = vlRestante % 20;
 
-n10 = (int)(valorRestante / 10);
-valorRestante = valorRestante % 10;
+n10 = (int)(vlRestante / 10);
+vlRestante = vlRestante % 10;
 
-n5 = (int)(valorRestante / 5);
-valorRestante = valorRestante % 5;
+n5 = (int)(vlRestante / 5);
+vlRestante = vlRestante % 5;
 
-n2 = (int)(valorRestante / 2);
-valorRestante = valorRestante % 2;
+n2 = (int)(vlRestante / 2);
+vlRestante = vlRestante % 2;
 
-n1 = (int)(valorRestante / 1);
-valorRestante = valorRestante % 1;
+n1 = (int)(vlRestante / 1);
+vlRestante = vlRestante % 1;
 
-Console.WriteLine("=======================");
+Console.WriteLine("\n========================");
 Console.ForegroundColor = ConsoleColor.DarkGreen;
 Console.WriteLine(@" O caixa deve entregar:");
 Console.ResetColor();
-Console.WriteLine("=======================\n");
+Console.WriteLine("========================\n");
 
 
 if (n200 > 0) Console.WriteLine($"{n200} nota(s) de R$200,00");
